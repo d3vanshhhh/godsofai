@@ -8,25 +8,25 @@ const EventsSection = () => {
   const rooms = [
     {
       index: '01',
-      title: 'Live AI Roundtables',
+      title: 'Virtual AI Roundtables',
       description:
-        'Small, closed online sessions where members walk through real production architectures, explain why key decisions were made, and dissect what broke, what scaled, and what they would change if building again.',
+        'Small, closed online sessions where members walk through real production architectures, explain why decisions were made, and break down what failed, what scaled, and what they would change if rebuilding.',
       image:
-        'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&auto=format&fit=crop',
+        '/events/event-1.png',
     },
     {
       index: '02',
       title: 'Agent & Infra Debugging',
       description:
-        'Hands-on problem-solving sessions where members bring real bugs, scaling issues, and agent failures to debug architectures, prompts, infrastructure, and deployment choices with experienced peers.',
+        'Live problem-solving sessions where members bring real bugs, scaling issues, and agent failures to debug architectures, prompts, infrastructure, and deployment choices with experienced peers.',
       image: '/events/event-2.png',
     },
     {
       index: '03',
-      title: 'Founder × Engineer Sessions',
+      title: '1:1 Founder × Engineer Sessions',
       description:
         'Private 1:1 online sessions with top AI founders where engineers evaluate problem statements, team needs, and technical direction, often leading to early hiring conversations, advisory roles, or long-term collaboration.',
-      image: '/events/event-3.png',
+      image: '/events/event-3.jpg',
     },
   ];
 
@@ -83,7 +83,7 @@ const EventsSection = () => {
                     {room.index}
                   </div>
 
-                  <h3 className="font-serif font-semibold text-4xl md:text-5xl mb-4">
+                  <h3 className="font-serif font-semibold text-3xl md:text-[2.8rem] mb-4">
                     {room.title}
                   </h3>
 

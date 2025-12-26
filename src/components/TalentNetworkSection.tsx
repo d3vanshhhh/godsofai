@@ -12,9 +12,9 @@ const TalentNetworkSection = () => {
                 'Create one profile and get considered for multiple startup roles.',
         },
         {
-            title: 'Direct interviews with startups',
+            title: 'Direct interviews with top founders',
             description:
-                'Startups reach out to you directly when your profile matches their role requirements.',
+                'Founders reach out directly when your background matches what they are building.',
         },
         {
             title: 'Focused on AI and engineering roles',
@@ -58,7 +58,7 @@ const TalentNetworkSection = () => {
                 </motion.div>
 
                 {/* CARDS — SAME SCALE AS LEARN */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-16">
                     {items.map((item, i) => (
                         <motion.div
                             key={i}
@@ -113,7 +113,7 @@ const TalentNetworkSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
-                    className="flex justify-center mb-20"
+                    className="flex justify-center mb-16"
                 >
                     <a
                         href="https://candidate.coderound.tech/"
@@ -129,14 +129,14 @@ const TalentNetworkSection = () => {
               transition-opacity
             "
                     >
-                        Join the Talent Network
+                        Join Now
                         <ArrowRight size={18} />
                     </a>
                 </motion.div>
             </div>
 
             {/* COMPANY LOGO MARQUEE */}
-            <div className="relative overflow-hidden py-12">
+            <div className="relative overflow-hidden pt-4 pb-8">
                 <div className="animate-marquee flex gap-16 items-center">
                     {[...logos, ...logos].map((logo, i) => (
                         <img

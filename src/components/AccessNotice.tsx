@@ -19,7 +19,14 @@ const AccessNotice = () => {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: 'easeOut' }}
-      className="fixed bottom-24 md:bottom-6 right-0 z-50"
+      className="
+        fixed
+        right-0
+        z-50
+        bottom-20
+        sm:bottom-16
+        md:bottom-6
+      "
     >
       <motion.div
         layout
@@ -34,8 +41,15 @@ const AccessNotice = () => {
           shadow-2xl
         "
       >
-        {/* THICK ACCENT SPINE */}
-        <div className="absolute left-0 top-0 h-full w-[20px] bg-primary flex items-center justify-center">
+        {/* ACCENT SPINE */}
+        <div
+          className="
+            absolute left-0 top-0 h-full
+            w-[14px] sm:w-[16px] md:w-[20px]
+            bg-primary
+            flex items-center justify-center
+          "
+        >
           <div
             className="
               rotate-90
@@ -44,11 +58,12 @@ const AccessNotice = () => {
               select-none
             "
           >
-          
             {!collapsed && (
               <span
                 className="
-                  text-[11px]
+                  text-[9px]
+                  sm:text-[10px]
+                  md:text-[11px]
                   font-semibold
                   tracking-widest
                   uppercase
@@ -58,13 +73,20 @@ const AccessNotice = () => {
                 Apply Now
               </span>
             )}
-
-            <ArrowUpRight size={14} className="text-black" />
+            <ArrowUpRight
+              className="text-black"
+              size={12}
+            />
           </div>
         </div>
 
-        <div className="relative flex items-center pl-[36px]">
-          {/* MAIN CONTENT */}
+        <div
+          className="
+            relative flex items-center
+            pl-[28px] sm:pl-[32px] md:pl-[36px]
+          "
+        >
+          {/* EXPANDED */}
           <AnimatePresence initial={false}>
             {!collapsed && (
               <motion.div
@@ -73,31 +95,52 @@ const AccessNotice = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex flex-col items-center px-6 py-4 space-y-2"
+                className="
+                  flex flex-col items-center
+                  px-4 sm:px-5 md:px-6
+                  py-3 sm:py-3.5 md:py-4
+                  space-y-2
+                "
               >
-                <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                <span
+                  className="
+                    text-[9px]
+                    sm:text-[10px]
+                    uppercase
+                    tracking-[0.25em]
+                    text-muted-foreground
+                  "
+                >
                   Membership
                 </span>
 
-                <div className="flex items-baseline gap-3">
-                  <span className="text-4xl font-semibold text-primary leading-none">
+                <div className="flex items-baseline gap-2 sm:gap-3">
+                  <span className="text-3xl sm:text-4xl font-semibold text-primary leading-none">
                     $0
                   </span>
-                  <span className="text-lg line-through text-muted-foreground leading-none">
+                  <span className="text-sm sm:text-lg line-through text-muted-foreground leading-none">
                     $99
                   </span>
                 </div>
 
-                <div className="w-8 h-px bg-border" />
+                <div className="w-6 sm:w-8 h-px bg-border" />
 
-                <span className="text-[11px] text-muted-foreground uppercase tracking-wider">
+                <span
+                  className="
+                    text-[9px]
+                    sm:text-[11px]
+                    uppercase
+                    tracking-wider
+                    text-muted-foreground
+                  "
+                >
                   LIMITED ACCESS WINDOW
                 </span>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* COLLAPSED STATE */}
+          {/* COLLAPSED */}
           <AnimatePresence initial={false}>
             {collapsed && (
               <motion.div
@@ -106,25 +149,39 @@ const AccessNotice = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.25, ease: 'easeOut' }}
-                className="flex items-center gap-2 px-4 py-3"
+                className="
+                  flex items-center
+                  gap-2
+                  px-3 sm:px-4
+                  py-2.5 sm:py-3
+                "
               >
-                <span className="text-xl font-semibold text-primary leading-none">
+                <span className="text-lg sm:text-xl font-semibold text-primary leading-none">
                   $0
                 </span>
-                <span className="text-sm line-through text-muted-foreground leading-none">
+                <span className="text-xs sm:text-sm line-through text-muted-foreground leading-none">
                   $99
                 </span>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* TOGGLE ICON — ONLY THIS COLLAPSES */}
+          {/* TOGGLE */}
           <button
             onClick={handleToggle}
-            className="flex items-center px-2 text-muted-foreground hover:text-foreground"
+            className="
+              flex items-center
+              px-2
+              text-muted-foreground
+              hover:text-foreground
+            "
             aria-label="Toggle access notice"
           >
-            {collapsed ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+            {collapsed ? (
+              <ChevronLeft size={16} />
+            ) : (
+              <ChevronRight size={16} />
+            )}
           </button>
         </div>
       </motion.div>

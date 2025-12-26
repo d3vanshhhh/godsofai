@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const VSLSection = () => {
   return (
-    <section className="relative pt-24 pb-12 bg-background">
+    <section className="relative pt-32 pb-12 bg-background">
       <div className="container-premium text-center">
         
         {/* Heading */}
