@@ -3,108 +3,97 @@ import { useInView } from 'react-intersection-observer';
 import { ArrowRight } from 'lucide-react';
 
 const EventsSection = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
-  const events = [
+  const rooms = [
     {
-      title: 'Build AI Agents From Scratch',
-      host: 'Alex Chen',
-      date: 'Fri, Dec 27',
-      location: 'San Francisco',
-      badge: 'Last Few Spots',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop',
+      index: '01',
+      title: 'Live AI Roundtables',
+      description:
+        'Small, closed online sessions where members walk through real production architectures, explain why key decisions were made, and dissect what broke, what scaled, and what they would change if building again.',
+      image:
+        'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&auto=format&fit=crop',
     },
     {
-      title: 'How to Scale AI Startups',
-      host: 'Sarah Kim',
-      date: 'Sat, Jan 4',
-      location: 'Virtual Event',
-      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop',
+      index: '02',
+      title: 'Agent & Infra Debugging',
+      description:
+        'Hands-on problem-solving sessions where members bring real bugs, scaling issues, and agent failures to debug architectures, prompts, infrastructure, and deployment choices with experienced peers.',
+      image: '/events/event-2.png',
     },
     {
-      title: 'The AI Builder Roadmap',
-      host: 'Michael Ross',
-      date: 'Thu, Jan 10',
-      location: 'Virtual Event',
-      badge: 'Watch Recording',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
-    },
-    {
-      title: 'LLM Fine-tuning Workshop',
-      host: 'Emily Zhang',
-      date: 'Sun, Jan 12',
-      location: 'New York',
-      image: 'https://images.unsplash.com/photo-1676299081847-c3c9a0f4c4f0?w=800&auto=format&fit=crop',
+      index: '03',
+      title: 'Founder × Engineer Sessions',
+      description:
+        'Private 1:1 online sessions with top AI founders where engineers evaluate problem statements, team needs, and technical direction, often leading to early hiring conversations, advisory roles, or long-term collaboration.',
+      image: '/events/event-3.png',
     },
   ];
 
   return (
     <section ref={ref} id="events" className="section-padding bg-background">
       <div className="container-premium">
+
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="mb-20 max-w-xl"
         >
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4">
-            Be around people smarter than you
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+            What <span className="text-primary">happens</span> inside the community
           </h2>
-          <p className="text-muted-foreground max-w-2xl mb-6">
-            Members get access to online private community & in-person events.
-            Choose from AI learning sprints, vibe coding hackathons, meetups & more.
-          </p>
-          <a
-            href="#all-events"
-            className="inline-flex items-center gap-2 text-primary hover:underline"
-          >
-            See all events <ArrowRight size={16} />
-          </a>
         </motion.div>
 
-        {/* Events Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {events.map((event, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-colors cursor-pointer"
-            >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {event.badge && (
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-background/90 backdrop-blur-sm rounded-full text-xs font-medium">
-                    {event.badge}
-                  </div>
-                )}
-              </div>
+        {/* Rooms */}
+        <div className="space-y-24">
+          {rooms.map((room, i) => {
+            const isEven = i % 2 === 1;
 
-              {/* Content */}
-              <div className="p-4">
-                <h3 className="font-serif text-lg mb-3 group-hover:text-primary transition-colors">
-                  {event.title}
-                </h3>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-xs font-medium">
-                    {event.host.charAt(0)}
+            return (
+              <motion.div
+                key={room.index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: i * 0.1 }}
+                className={`
+                  grid grid-cols-1 lg:grid-cols-2 gap-16 items-center
+                  ${isEven ? 'lg:grid-flow-col-dense' : ''}
+                `}
+              >
+                {/* Image */}
+                <div
+                  className={`
+                    relative h-[320px] rounded-3xl overflow-hidden
+                    ${isEven ? 'lg:col-start-2' : ''}
+                  `}
+                >
+                  <img
+                    src={room.image}
+                    alt={room.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+
+                {/* Content */}
+                <div className="max-w-xl">
+                  <div className="text-muted-foreground font-mono text-[1.4rem] mb-4">
+                    {room.index}
                   </div>
-                  <span className="text-sm text-muted-foreground">{event.host}</span>
+
+                  <h3 className="font-serif font-semibold text-4xl md:text-5xl mb-4">
+                    {room.title}
+                  </h3>
+
+                  <p className="text-base md:text-lg text-muted-foreground">
+                    {room.description}
+                  </p>
                 </div>
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
-                  <span>{event.date}</span>
-                  <span>{event.location}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

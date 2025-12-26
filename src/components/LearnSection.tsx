@@ -1,100 +1,100 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const LearnSection = () => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
-  const courses = [
+  const insights = [
     {
-      title: 'How to build your first AI agent',
-      duration: '1hr 22min',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&auto=format&fit=crop',
+      title: 'Fixing real production failures',
+      description:
+        'Concrete incidents shared by engineers responsible for live systems, including the failure, root cause, and final fix.',
     },
     {
-      title: 'AI Engineering Playbook: LLMs, RAG & Agents',
-      duration: '1hr 40min',
-      image: 'https://images.unsplash.com/photo-1676299081847-c3c9a0f4c4f0?w=600&auto=format&fit=crop',
+      title: 'Designing AI systems for scale',
+      description:
+        'How top-of-the-funnel teams structure, deploy, and evolve agent systems under real operational constraints.',
     },
     {
-      title: 'Build Voice-AI agents in 30 minutes',
-      duration: '1hr 3min',
-      image: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&auto=format&fit=crop',
+      title: 'Mastering tools trusted by top teams',
+      description:
+        'Tools used by high-performing teams that were kept, replaced, or dropped after real usage exposed limits.',
     },
     {
-      title: 'How memory makes AI agents smarter',
-      duration: '1hr 1min',
-      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&auto=format&fit=crop',
-    },
-    {
-      title: 'Fine-tuning LLMs for production',
-      duration: '1hr 35min',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&auto=format&fit=crop',
-    },
-    {
-      title: 'Building search for AI agents',
-      duration: '1hr 6min',
-      image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&auto=format&fit=crop',
+      title: 'Access to an opt-in talent network',
+      description:
+        'Direct access to an opt-in talent network where top AI startups and engineering teams actively source engineers.',
     },
   ];
 
   return (
-    <section ref={ref} id="learn" className="section-padding bg-card/50">
+    <section ref={ref} id="edge" className="section-padding bg-card/40">
       <div className="container-premium">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="mb-20 max-w-5xl mx-auto text-center"
         >
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4">
-            Learn & implement AI every week
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+            How members <span className="text-primary">benefit</span> from Gods of AI
           </h2>
-          <p className="text-muted-foreground max-w-2xl mb-6">
-            Members get access to 90 min online sessions taught
-            by top experts in AI. Take notes, ask questions & implement right away.
-          </p>
-          <a
-            href="#library"
-            className="inline-flex items-center gap-2 text-primary hover:underline"
-          >
-            Explore the library <ArrowRight size={16} />
-          </a>
         </motion.div>
 
-        {/* Courses Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {courses.map((course, i) => (
-            <motion.a
+        {/* Insights */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {insights.map((item, i) => (
+            <motion.div
               key={i}
-              href="#"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all"
-            >
-              {/* Image */}
-              <div className="relative h-40 overflow-hidden">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-              </div>
+              transition={{ duration: 0.7, delay: i * 0.08 }}
+              className="
+                group
+                h-full
+                flex
+                flex-col
+                rounded-3xl
+                p-8
 
-              {/* Content */}
-              <div className="p-4">
-                <h3 className="font-serif text-base mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                  {course.title}
-                </h3>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <Zap size={12} className="text-primary" />
-                  <span>{course.duration}</span>
-                </div>
-              </div>
-            </motion.a>
+                bg-card/60
+                backdrop-blur
+
+                border
+                border-border/40
+
+                transition-all
+                duration-500
+                ease-out
+
+                hover:-translate-y-1
+                hover:bg-card
+                hover:border-primary/40
+                hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.4)]
+              "
+            >
+              <h3
+                className="
+                font-serif
+                text-[2rem]
+                lg:text-[2.2rem]
+                leading-snug
+                min-h-[4.5rem] md:min-h-[5rem]
+                mb-4
+                transition-colors
+                duration-300
+                group-hover:text-primary
+                "
+              >
+                {item.title}
+              </h3>
+
+              <p className="text-base md:text-lg text-muted-foreground">
+                {item.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>
