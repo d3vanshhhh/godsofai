@@ -14,6 +14,8 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          aria-hidden="true"
+          tabIndex={-1}
         />
 
         {/* Overlays for readability */}

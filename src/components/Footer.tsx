@@ -71,24 +71,32 @@ const Footer = () => {
             <div className="flex gap-4">
               <a
                 href="mailto:hello@godsofai.com"
+                aria-label="Email Gods of AI"
                 className="w-10 h-10 rounded-lg bg-card border border-border
-                           flex items-center justify-center
-                           hover:border-primary hover:bg-primary/10
-                           transition-all duration-300"
+               flex items-center justify-center
+               hover:border-primary hover:bg-primary/10
+               transition-all duration-300"
               >
-                <Mail className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                <Mail
+                  className="w-4 h-4 text-muted-foreground hover:text-primary"
+                  aria-hidden="true"
+                />
               </a>
 
               <a
                 href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Gods of AI on LinkedIn"
                 className="w-10 h-10 rounded-lg bg-card border border-border
-                           flex items-center justify-center
-                           hover:border-primary hover:bg-primary/10
-                           transition-all duration-300"
+               flex items-center justify-center
+               hover:border-primary hover:bg-primary/10
+               transition-all duration-300"
               >
-                <Linkedin className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                <Linkedin
+                  className="w-4 h-4 text-muted-foreground hover:text-primary"
+                  aria-hidden="true"
+                />
               </a>
             </div>
           </motion.div>
