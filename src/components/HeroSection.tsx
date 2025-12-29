@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/hero-bg.mp4"
+          src="/videos/hero-bg.webm"
           poster="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
           autoPlay
           loop

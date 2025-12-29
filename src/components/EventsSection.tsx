@@ -12,21 +12,21 @@ const EventsSection = () => {
       description:
         'Small, closed online sessions where members walk through real production architectures, explain why decisions were made, and break down what failed, what scaled, and what they would change if rebuilding.',
       image:
-        '/events/event-1.png',
+        '/events/event-1.webp',
     },
     {
       index: '02',
       title: 'Agent & Infra Debugging',
       description:
         'Live problem-solving sessions where members bring real bugs, scaling issues, and agent failures to debug architectures, prompts, infrastructure, and deployment choices with experienced peers.',
-      image: '/events/event-2.png',
+      image: '/events/event-2.webp',
     },
     {
       index: '03',
       title: '1:1 Founder × Engineer Sessions',
       description:
         'Private 1:1 online sessions with top AI founders where engineers evaluate problem statements, team needs, and technical direction, often leading to early hiring conversations, advisory roles, or long-term collaboration.',
-      image: '/events/event-3.jpg',
+      image: '/events/event-3.webp',
     },
   ];
 

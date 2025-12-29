@@ -9,8 +9,8 @@ const testimonials = [
     role: "AI Partnerships",
     company: "Lenskart",
     memberSince: "2025",
-    image: "/testimonials/merin.jpg",
-    logo: "/logos/testimonial-lenskart.webp",
+    image: "/testimonials/merin.webp",
+    logo: "/testimonials/testimonial-lenskart.webp",
   },
   {
     quote:
@@ -19,8 +19,8 @@ const testimonials = [
     role: "Head of AI Research",
     company: "Meta",
     memberSince: "2023",
-    image: "/testimonials/alex.jpg",
-    logo: "/logos/testimonial-meta.webp",
+    image: "/testimonials/alex.webp",
+    logo: "/testimonials/testimonial-meta.webp",
   },
   {
     quote:
@@ -29,8 +29,8 @@ const testimonials = [
     role: "ML Engineer",
     company: "Sarvam AI",
     memberSince: "2024",
-    image: "/testimonials/sarah.jpg",
-    logo: "/logos/sarvam-ai-logo-2.webp",
+    image: "/testimonials/sarah.webp",
+    logo: "/testimonials/testimonial-sarvam.webp",
   },
 ];
 

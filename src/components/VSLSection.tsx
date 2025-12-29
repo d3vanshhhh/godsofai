@@ -34,7 +34,7 @@ const VSLSection = () => {
         >
           {/* Thumbnail */}
           <img
-            src="/vsl/thumbnail.png"
+            src="/vsl/thumbnail.webp"
             alt="How the Gods of AI network works"
             className="absolute inset-0 h-full w-full object-contain opacity-90"
           />

@@ -24,16 +24,16 @@ const TalentNetworkSection = () => {
     ];
 
     const logos = [
-        "/logos/sarvam-ai-logo-2.webp",
+        "/logos/sarvam_ai.webp",
         "/logos/blume.svg",
-        "/logos/peak 15.webp",
-        "/logos/processity.png",
+        "/logos/peak_15.webp",
+        "/logos/processity.webp",
         "/logos/nurix.svg",
-        "/logos/Gan AI.svg",
+        "/logos/gan_ai.svg",
         "/logos/segwise.svg",
         "/logos/mercor.svg",
-        "/logos/kubo_care.png",
-        "/logos/drizz.avif",
+        "/logos/kubo_care.webp",
+        "/logos/drizz.webp",
         "/logos/turgon.svg",
         "/logos/vault.svg",
     ];

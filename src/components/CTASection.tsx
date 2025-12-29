@@ -6,7 +6,7 @@ const CTASection = () => {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/cta/fit-bg.png"
+          src="/cta/fit-bg.webp"
           alt="CTA background"
           className="h-full w-full object-cover"
         />
